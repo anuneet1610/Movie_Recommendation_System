@@ -4,4 +4,10 @@
 
 
 **Prediction Models**: This Recommender System includes 3 models. The first one is the main model. This main model takes input the user ID and movie ID (both already present in the dataset), and then predicts what rating that user would give to that particular movie. This model first converts the user ID and movie ID to embeddings, and then combine them with the movie features (genre, year, etc), to feed into a neural network, which then outputs the estimated rating. The second model is the coldstart-movie model, which is used when the user wants to know the rating of a movie which is not already present in the dataset. This model also has the same architecture as the previous one, its just that it does not use embeddings for movie ID. The third model is the coldstart-user model. This model is used when we want to predict what rating a new user would give to a particular movie. This model uses only the features of a movie, and does not utilize any description of the user.
+
 These models are activated according to the input given by the user.
+
+
+**Setup Instructions**: The libraries required for running this Recommender System are numpy, pandas, tensorflow keras, joblib and sklearn. In order to run the system, open the Recommendation_System.ipynb file and run the predict_rating function under the heading "Prediction". 
+
+Using the last 3 cells of the file, you can calculate the RMSE of each of the 3 models. For main model, it is 0.7, for coldstart-movie model, it is 1.09 and for coldstart-user model, it is 1.06. 
